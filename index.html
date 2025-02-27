@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-image: url(./images/bg-desktop.png);
+      background-repeat: no-repeat;
+      background-position-x:center;
+      background-position-y: 280px;
+      background-color: hsl(229, 57%, 11%);
+      display: flex;
+      font-family: sans-serif;
+    }
+    .container{
+      margin: 60px auto;
+      /* background-color: black; */
+      width: 80%;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .box1{
+      background-color: hsl(228, 56%, 26%);
+      width: 305px;
+      height: 155px;
+      margin-left: 50px;
+      margin-bottom: 60px;
+      border-top-right-radius: 90px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      position: relative;
+      padding: 20px;
+      padding-top: 20px;
+      
+    }
+    .box2{
+      background-color: hsl(228, 56%, 26%);
+      width: 475px;
+      height: 130px;
+      margin-left: 50px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      padding: 25px;
+    }
+    .logo{
+      /* position: absolute; */
+      margin-bottom: 22px;
+      
+    }
+    .conimg{
+      width: 100%;
+    }
+    .icon{
+      background-color: hsl(229, 57%, 11%);
+      margin-left: 8px;
+      border: 15px solid hsl(229, 57%, 11%);
+      border-radius: 5px;
+      height: 50px;
+    }
+    #rest{
+      color: white;
+      font-weight: 900;
+    }
+    .main{
+      color: white;
+    }
+    .slider{
+      width: 100%;
+      height: 12px;
+      background-color: hsl(229, 57%, 11%);
+      border-radius: 19px;
+    }
+    .filter{
+      width: 75%;
+      height: 12px;
+      border-radius: 19px;
+      display: flex;
+      align-items:center ;
+      justify-content: flex-end;
+      background:linear-gradient(
+      90deg,
+      hsl(6, 100%, 80%),
+      hsl(335, 100%, 65%)
+      )
+
+    }
+    .circle{
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 100%;
+      float: right;
+    }
+    .chatbox{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 60px;
+      background-color: white;
+      transform: translate(870px,-92px);
+      border-radius: 6px;
+      gap: 7px;
+    }
+    .chatskew{
+      width: 20px;
+      height: 37px;
+      background-color: white;
+      position: absolute;
+      left: 1001px;
+      top: 163px;
+      transform: skew(3deg,65deg);
+    }
+    h1{
+      margin-left: -20px;
+      font-size: 40px;
+
+    }
+    h4{
+      color: hsl(229, 7%, 55%);
+      font-size: 10px;
+    }
+    .byte{
+      float: right;
+    }
+    .bottom{
+      display: flex;
+      gap: 330px;
+      color: white;
+      margin-top: 10px;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @media screen and (max-width:500px) {
+      body{
+        background-image: url(./images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-color: none;
+        background-position: center,center;
+      }
+      .container{
+        display: flex;
+        flex-direction: column;
+      }
+      .box2{
+        width: 110%;
+        margin-left: 0;
+
+      }
+      .box1{
+        margin-left: 0;
+      }
+      .bottom{
+        gap: 230px;
+      }
+      .chatskew{
+        display: none;
+      }
+      .chatbox{
+        transform: translate(1px,378px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="chatbox">
+      <h1>185</h1>
+      <h4>GB LEFT</span>
+    </div>
+    <div class="chatskew"></div>
+    <div class="box1">
+      <img class="logo" src="./images/logo.svg" alt="">
+      <div class="conimg">
+        <img class="icon" src="./images/icon-document.svg" alt="">
+        <img class="icon" src="./images/icon-folder.svg" alt="">
+        <img class="icon" src="./images/icon-upload.svg" alt="">
+      </div>
+    </div>
+    <div class="box2">
+      <span class="main">You've used <span id="rest">815 GB</span> of your storage</span>
+      <br>
+      <br>
+      <div class="slider">
+        <div class="filter">
+          <div class="circle">
+
+          </div>
+        </div>
+        <div class="bottom">
+        <p class="giga">0 GB</p>
+        <p class="byte">100 GB</p>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- You've used 815 GB of your storage
+
+  185 GB Left
+  
+  0 GB
+  1000 GB
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
